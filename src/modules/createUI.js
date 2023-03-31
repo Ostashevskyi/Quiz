@@ -1,16 +1,16 @@
 import { questions } from "./getData";
 import { gameData, notifications, notificationsIcon } from "./data";
-import { changeQuestion, putData, selectAnswer } from "./gameRules";
+import { changeQuestion, mathPercentage, putData, selectAnswer } from "./gameRules";
 
 const main = document.querySelector('main');
 
-function clearUI() {
+function clearUI(cls) {
     main.replaceChildren();
-    main.classList.add('question');
+    main.classList.add(cls);
 }
 
 export async function createQuestionUI() {
-    clearUI();
+    clearUI('question');
 
     //title
     const title = createTitle('Quiz Game');
@@ -37,8 +37,10 @@ export async function createQuestionUI() {
     checkAnswerBtn.classList.add('check-btn');
     checkAnswerBtn.innerHTML = 'Check Answer';
     checkAnswerBtn.addEventListener('click', () => {
-        putData(gameData.currentQuestion);
-        changeQuestion();
+        document.querySelector('.selected') ? (
+            putData(gameData.currentQuestion),
+            changeQuestion()
+        ) : alert('option');
     });
     main.appendChild(checkAnswerBtn);
 
@@ -69,8 +71,6 @@ function createTitle(content) {
 }
 
 function appendQuestionInfo(currentQuestion) {
-    console.log(questions)
-
     const questionInfoDiv = createDiv('question-div');
 
     const questionTitle = document.createElement('h2');
@@ -122,10 +122,6 @@ function shuffle(array) {
 function appendNotification() {
     const notificationDiv = createDiv('notification');
 
-    const icon = document.createElement('img');
-    icon.src = notificationsIcon[0];
-    notificationDiv.appendChild(icon);
-
     const notification = document.createElement('p');
     notification.innerHTML = notifications[0];
     notificationDiv.appendChild(notification);
@@ -134,3 +130,15 @@ function appendNotification() {
 }
 
 ///////////////////////////////////////////////////////
+
+export function createResultUI() {
+    clearUI('result');
+    main.appendChild(createResNotification());
+}
+
+
+function createResNotification() {
+    const percentage = document.createElement('p');
+    percentage.innerHTML = `${mathPercentage()}%`;
+    return percentage
+}

@@ -1,15 +1,13 @@
-import { createQuestionUI } from "./createUI";
+import { createQuestionUI, createResultUI } from "./createUI";
 import { gameData } from "./data";
 import { questions } from "./getData";
 
 export function putData(currentIndex) {
-    gameData.questionsData[gameData.currentQuestion]= {
-        correct: questions[currentIndex].correct_answer,
-        selected: document.querySelector('.selected').innerHTML,
-        isCorrect: questions[currentIndex].correct_answer === document.querySelector('.selected').innerHTML ? true : false,
-    } 
-
-    console.log(gameData);
+    gameData.questionsData[gameData.currentQuestion]= [
+        questions[currentIndex].correct_answer,
+        document.querySelector('.selected').innerHTML,
+        questions[currentIndex].correct_answer === document.querySelector('.selected').innerHTML ? true : false
+    ]
     return gameData;
 }
 
@@ -27,7 +25,19 @@ export function selectAnswer() {
 }
 
 export function changeQuestion() {
+    if (gameData.currentQuestion + 1 < questions.length) {
+        gameData.currentQuestion +=1 
+        createQuestionUI();
+    } else {
+        createResultUI();
+    }
+}
 
-    gameData.currentQuestion < 9 ? gameData.currentQuestion += 1 : '';
-    createQuestionUI();
+
+export function mathPercentage() {
+    const results = gameData.questionsData.map(el => el[2]);
+    const trueElems = results.filter(el => el === true).length;
+
+    const percentage = (100 * trueElems) / results.length;
+    return percentage
 }

@@ -1,13 +1,14 @@
 export const gameData = {
     currentQuestion: 0,
-    questionsData: {
-    },
+    questionsData: [
+
+    ]
 }
 
 export const notifications = [
-    'Correct Answer',
-    'Incorrect Answer',
-    'Please select an option'
+    ['Well Done', 'Amazing'],
+    ['Good', 'Not Bad'],
+    ['U can Better', 'Try another time']
 ]
 
 export const notificationsIcon = [
