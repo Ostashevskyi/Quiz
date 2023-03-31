@@ -2,5 +2,45 @@
 @import './styles/fonts';
 
 body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-color: $bg;
+
 }
+
+main {
+    background-color: white;
+    max-width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    // border: 1px solid black;
+    border-radius: 10px 0px 10px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .inputs {
+        width: 80%;
+        margin: 20px auto 0px auto;
+        &:last-child {
+            margin-bottom: 20px;
+        }
+    }
+    select > option {
+        font-size: 20px;
+    }
+}
+
+main.question {
+    background: white;
+    max-width: 700px;
+    .answers-div {
+        .selected {
+            background: green;
+        }
+    }
+}
+

@@ -15,6 +15,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
         filename: '[name].[contenthash].js',
+        assetModuleFilename: 'assets/[hash][ext]',
     },
     module: {
         rules: [
@@ -36,6 +37,10 @@ module.exports = {
                 generator: {
                     filename: 'fonts/[name][ext]'
                 },
+            },
+            {
+                test: /\.(jpe?g|png|webp|gif|svg)$/i,
+                type: 'asset/resuorce',
             },
         ]
     },
