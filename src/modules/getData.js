@@ -18,7 +18,5 @@ export async function getData() {
     return dataJSON.results;
 }
 
-// export const arr = async () => await getData();
-
 
 
