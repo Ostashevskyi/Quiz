@@ -33,14 +33,14 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resourse',
+                type: 'asset/resource',
                 generator: {
                     filename: 'fonts/[name][ext]'
                 },
             },
             {
                 test: /\.(jpe?g|png|webp|gif|svg)$/i,
-                type: 'asset/resuorce',
+                type: 'asset/resource',
             },
         ]
     },

@@ -16,12 +16,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./fonts/Roboto-Bold.ttf */ "./src/fonts/Roboto-Bold.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./fonts/Roboto-Regular.ttf */ "./src/fonts/Roboto-Regular.ttf"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  background-color: #E6E6FA;\n}\n\nmain {\n  background-color: white;\n  max-width: 700px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  display: flex;\n  flex-direction: column;\n  text-align: center;\n  border-radius: 10px 0px 10px 0px;\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\nmain .inputs {\n  width: 80%;\n  margin: 20px auto 0px auto;\n}\nmain .inputs:last-child {\n  margin-bottom: 20px;\n}\nmain select > option {\n  font-size: 20px;\n}\n\nmain.question {\n  background: white;\n  max-width: 700px;\n}", "",{"version":3,"sources":["webpack://./src/index.scss","webpack://./src/styles/_var.scss"],"names":[],"mappings":"AAGA;EACI,SAAA;EACA,UAAA;EACA,sBAAA;EACA,yBCPC;ADKL;;AAMA;EACI,uBAAA;EACA,gBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EACA,gCAAA;EACA,aAAA;EACA,sBAAA;EACA,kBAAA;EAEA,gCAAA;EACA,qDAAA;AAJJ;AAKI;EACI,UAAA;EACA,0BAAA;AAHR;AAIQ;EACI,mBAAA;AAFZ;AAKI;EACI,eAAA;AAHR;;AAOA;EACI,iBAAA;EACA,gBAAA;AAJJ","sourcesContent":["@import './styles/var';\r\n@import './styles/fonts';\r\n\r\nbody {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    background-color: $bg;\r\n\r\n}\r\n\r\nmain {\r\n    background-color: white;\r\n    max-width: 700px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    display: flex;\r\n    flex-direction: column;\r\n    text-align: center;\r\n    // border: 1px solid black;\r\n    border-radius: 10px 0px 10px 0px;\r\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\r\n    .inputs {\r\n        width: 80%;\r\n        margin: 20px auto 0px auto;\r\n        &:last-child {\r\n            margin-bottom: 20px;\r\n        }\r\n    }\r\n    select > option {\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\nmain.question {\r\n    background: white;\r\n    max-width: 700px;\r\n}\r\n\r\n","$bg: #E6E6FA;\r\n$purple: rgba(141,98,192,255);"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: \"Roboto Bold\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n@font-face {\n  font-family: \"Roboto Regular\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\nbody {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  background-color: #E6E6FA;\n}\n\nmain {\n  background-color: white;\n  max-width: 700px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  display: flex;\n  flex-direction: column;\n  text-align: center;\n  border-radius: 10px 0px 10px 0px;\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\nmain .inputs {\n  width: 80%;\n  margin: 20px auto 0px auto;\n  height: 40px;\n  border-radius: 5px;\n  border-color: rgb(141, 98, 192);\n  color: rgb(141, 98, 192);\n}\nmain .inputs:last-child {\n  margin-bottom: 20px;\n}\nmain .inputs:focus, main .inputs:active, main .inputs:focus-visible {\n  border-color: rgb(141, 98, 192);\n}\nmain #number {\n  width: 78%;\n}\nmain select {\n  padding: 10px;\n}\nmain select > option {\n  font-size: 15px;\n  color: black;\n}\n\nmain.question {\n  background: white;\n  max-width: 700px;\n  padding: 0px 15px;\n}\nmain.question .count-div p {\n  border: 5px solid #F3F2F3;\n  font-weight: 700;\n  color: rgb(141, 98, 192);\n  font-size: 15px;\n  width: 10%;\n  margin: 0 auto;\n  padding: 10px;\n}\nmain.question .answers-div .selected {\n  background: green;\n}", "",{"version":3,"sources":["webpack://./src/styles/_fonts.scss","webpack://./src/index.scss","webpack://./src/styles/_var.scss"],"names":[],"mappings":"AAAA;EACI,0BAAA;EACA,4CAAA;ACCJ;ADEA;EACI,6BAAA;EACA,4CAAA;ACAJ;AAJA;EACI,SAAA;EACA,UAAA;EACA,sBAAA;EACA,yBCPC;ADaL;;AAFA;EACI,uBAAA;EACA,gBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EACA,gCAAA;EACA,aAAA;EACA,sBAAA;EACA,kBAAA;EACA,gCAAA;EACA,qDAAA;AAKJ;AAJI;EACI,UAAA;EACA,0BAAA;EACA,YAAA;EACA,kBAAA;EACA,+BC3BC;ED4BD,wBC5BC;ADkCT;AAHQ;EACI,mBAAA;AAKZ;AAFQ;EACI,+BCpCH;ADwCT;AADI;EACI,UAAA;AAGR;AADI;EACI,aAAA;AAGR;AADI;EACI,eAAA;EACA,YAAA;AAGR;;AACA;EACI,iBAAA;EACA,gBAAA;EACA,iBAAA;AAEJ;AAAQ;EACI,yBAAA;EACA,gBAAA;EACA,wBC3DH;ED4DG,eAAA;EACA,UAAA;EACA,cAAA;EACA,aAAA;AAEZ;AAEQ;EACI,iBAAA;AAAZ","sourcesContent":["@font-face {\r\n    font-family: 'Roboto Bold';\r\n    src: url('./fonts/Roboto-Bold.ttf');\r\n}\r\n\r\n@font-face {\r\n    font-family: 'Roboto Regular';\r\n    src: url('./fonts/Roboto-Regular.ttf');\r\n}","@import './styles/var';\r\n@import './styles/fonts';\r\n\r\nbody {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    background-color: $bg;\r\n\r\n}\r\n\r\nmain {\r\n    background-color: white;\r\n    max-width: 700px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    display: flex;\r\n    flex-direction: column;\r\n    text-align: center;\r\n    border-radius: 10px 0px 10px 0px;\r\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\r\n    .inputs {\r\n        width: 80%;\r\n        margin: 20px auto 0px auto;\r\n        height: 40px;\r\n        border-radius: 5px;\r\n        border-color: $purple;\r\n        color: $purple;\r\n        // border: 0;\r\n        // padding: 5px;\r\n        &:last-child {\r\n            margin-bottom: 20px;\r\n        }\r\n        \r\n        &:focus, &:active, &:focus-visible {\r\n            border-color: $purple;\r\n        }\r\n    }\r\n    #number {\r\n        width: 78%;\r\n    }\r\n    select {\r\n        padding: 10px;\r\n    }\r\n    select > option {\r\n        font-size: 15px;\r\n        color: black;\r\n    }\r\n}\r\n\r\nmain.question {\r\n    background: white;\r\n    max-width: 700px;\r\n    padding: 0px 15px;\r\n    .count-div {\r\n        p {\r\n            border: 5px solid $grey;\r\n            font-weight: 700;\r\n            color: $purple;\r\n            font-size: 15px;\r\n            width: 10%;\r\n            margin: 0 auto;\r\n            padding: 10px;\r\n        }\r\n    }\r\n    .answers-div {\r\n        .selected {\r\n            background: green;\r\n        }\r\n    }\r\n}\r\n\r\n","$bg: #E6E6FA;\r\n$purple: rgba(141,98,192,255);\r\n$grey: #F3F2F3;"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -122,6 +129,41 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
+};
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
 /*!************************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
@@ -164,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./index.js */ "./src/index.js?dfde"), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Quiz</title>\r\n    <" + "script defer src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\"><" + "/script>\r\n</head>\r\n<body>\r\n    <div class=\"wrapper\">\r\n        <main>\r\n            <h2>Quiz Game</h2>\r\n            <input type=\"number\" class=\"inputs\" id=\"number\" value=\"10\">\r\n            <select name=\"categories\" id=\"categories\" class=\"inputs\">\r\n                <option selected value=\"0\">Any category</option>\r\n                <option value=\"9\">General Knowledge</option>\r\n                <option value=\"10\">Entertainment: Books</option>\r\n                <option value=\"11\">Entertainment: Film</option>\r\n                <option value=\"12\">Entertainment: Music</option>\r\n                <option value=\"13\">Entertainment: Musicals & Theatres</option>\r\n                <option value=\"14\">Entertainment: Television</option>\r\n                <option value=\"15\">Entertainment: Video Games</option>\r\n                <option value=\"16\">Entertainment: Board Games</option>\r\n                <option value=\"17\">Science & Nature</option>\r\n                <option value=\"18\">Science: Computers</option>\r\n                <option value=\"19\">Science: Mathematics</option>\r\n                <option value=\"20\">Mythology</option>\r\n                <option value=\"21\">Sports</option>\r\n                <option value=\"22\">Geography</option>\r\n                <option value=\"23\">History</option>\r\n                <option value=\"24\">Politics</option>\r\n                <option value=\"25\">Art</option>\r\n                <option value=\"26\">Celebrities</option>\r\n                <option value=\"27\">Animals</option>\r\n                <option value=\"28\">Vehicles</option>\r\n                <option value=\"29\">Entertainment: Comics</option>\r\n                <option value=\"30\">Science: Gadgets</option>\r\n                <option value=\"31\">Entertainment: Japanese Anime & Manga</option>\r\n                <option value=\"32\">Entertainment: Cartoon & Animations</option>\r\n            </select>\r\n            <select name=\"difficulty\" id=\"difficulty\" class=\"inputs\">\r\n                <option selected value=\"\">Any type</option>\r\n                <option value=\"easy\">Easy</option>\r\n                <option value=\"medium\">Medium</option>\r\n                <option value=\"hard\">Hard</option>\r\n            </select>\r\n            <select name=\"type\" id=\"type\" class=\"inputs\">\r\n                <option value=\"multiple\">Multiple Choice</option>\r\n                <option value=\"boolean\">True / False</option>\r\n            </select>\r\n            <input type=\"submit\" value=\"Submit\" class=\"inputs\" id=\"submit\"></input>\r\n            <!-- <img src=\"./img/check.svg\" alt=\"img\"> -->\r\n        </main>\r\n    </div>\r\n    \r\n</body>\r\n</html>";
+var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Quiz</title>\r\n    <" + "script defer src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\"><" + "/script>\r\n</head>\r\n<body>\r\n    <div class=\"wrapper\">\r\n        <main>\r\n            <h2>Quiz Game</h2>\r\n            <input type=\"number\" class=\"inputs\" id=\"number\" value=\"10\">\r\n            <select name=\"categories\" id=\"categories\" class=\"inputs\">\r\n                <option selected value=\"0\">Any category</option>\r\n                <option value=\"9\">General Knowledge</option>\r\n                <option value=\"10\">Entertainment: Books</option>\r\n                <option value=\"11\">Entertainment: Film</option>\r\n                <option value=\"12\">Entertainment: Music</option>\r\n                <option value=\"13\">Entertainment: Musicals & Theatres</option>\r\n                <option value=\"14\">Entertainment: Television</option>\r\n                <option value=\"15\">Entertainment: Video Games</option>\r\n                <option value=\"16\">Entertainment: Board Games</option>\r\n                <option value=\"17\">Science & Nature</option>\r\n                <option value=\"18\">Science: Computers</option>\r\n                <option value=\"19\">Science: Mathematics</option>\r\n                <option value=\"20\">Mythology</option>\r\n                <option value=\"21\">Sports</option>\r\n                <option value=\"22\">Geography</option>\r\n                <option value=\"23\">History</option>\r\n                <option value=\"24\">Politics</option>\r\n                <option value=\"25\">Art</option>\r\n                <option value=\"26\">Celebrities</option>\r\n                <option value=\"27\">Animals</option>\r\n                <option value=\"28\">Vehicles</option>\r\n                <option value=\"29\">Entertainment: Comics</option>\r\n                <option value=\"30\">Science: Gadgets</option>\r\n                <option value=\"31\">Entertainment: Japanese Anime & Manga</option>\r\n                <option value=\"32\">Entertainment: Cartoon & Animations</option>\r\n            </select>\r\n            <select name=\"difficulty\" id=\"difficulty\" class=\"inputs\">\r\n                <option selected value=\"\">Any type</option>\r\n                <option value=\"easy\">Easy</option>\r\n                <option value=\"medium\">Medium</option>\r\n                <option value=\"hard\">Hard</option>\r\n            </select>\r\n            <select name=\"type\" id=\"type\" class=\"inputs\">\r\n                <option value=\"multiple\">Multiple Choice</option>\r\n                <option value=\"boolean\">True / False</option>\r\n            </select>\r\n            <input type=\"submit\" value=\"Submit\" class=\"inputs\" id=\"submit\"></input>\r\n        </main>\r\n    </div>\r\n    \r\n</body>\r\n</html>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -526,6 +568,35 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/index.js?b635":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "onClick": () => (/* binding */ onClick)
+/* harmony export */ });
+/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ "./src/index.html");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
+/* harmony import */ var _modules_createUI__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/createUI */ "./src/modules/createUI.js");
+/* harmony import */ var _modules_getData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/getData */ "./src/modules/getData.js");
+
+
+
+
+
+
+document.querySelector('#submit').addEventListener('click', () => onClick(_modules_getData__WEBPACK_IMPORTED_MODULE_3__.getHeadings));
+
+async function onClick (asyncFunc) {
+    await asyncFunc()
+    ;(0,_modules_createUI__WEBPACK_IMPORTED_MODULE_2__.createQuestionUI)()
+}
+
+/***/ }),
+
 /***/ "./src/modules/createUI.js":
 /*!*********************************!*\
   !*** ./src/modules/createUI.js ***!
@@ -534,40 +605,61 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createQuestionUI": () => (/* binding */ createQuestionUI)
+/* harmony export */   "createQuestionUI": () => (/* binding */ createQuestionUI),
+/* harmony export */   "createResultUI": () => (/* binding */ createResultUI)
 /* harmony export */ });
 /* harmony import */ var _getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData */ "./src/modules/getData.js");
 /* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data */ "./src/modules/data.js");
+/* harmony import */ var _gameRules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gameRules */ "./src/modules/gameRules.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../index */ "./src/index.js?b635");
+
+
 
 
 
 const main = document.querySelector('main');
 
-function clearUI() {
+function clearUI(cls) {
     main.replaceChildren();
-    main.classList.add('question');
+    main.classList.add(cls);
 }
 
 async function createQuestionUI() {
-    clearUI();
+    clearUI('question');
 
+    //title
     const title = createTitle('Quiz Game');
     main.appendChild(title);
 
+    //quesitons counter 
     const count = createCount(_data__WEBPACK_IMPORTED_MODULE_1__.gameData.currentQuestion);
     main.appendChild(count);
 
+    //question title & category
     const questionInfo = appendQuestionInfo(_data__WEBPACK_IMPORTED_MODULE_1__.gameData.currentQuestion);
     main.appendChild(questionInfo);
 
+    //notification 
+    const notification = appendNotification(_data__WEBPACK_IMPORTED_MODULE_1__.gameData.currentQuestion);
+    main.appendChild(notification);
+
+    //question answers
     const questionAnswers = appendQusetionAnswers(_data__WEBPACK_IMPORTED_MODULE_1__.gameData.currentQuestion);
     main.appendChild(questionAnswers);
 
-    const notification = appendNotification();
-    main.appendChild(notification);
-
+    //button
     const checkAnswerBtn = document.createElement('button');
+    checkAnswerBtn.classList.add('check-btn');
     checkAnswerBtn.innerHTML = 'Check Answer';
+    checkAnswerBtn.addEventListener('click', () => {
+        document.querySelector('.selected') ? (
+            (0,_gameRules__WEBPACK_IMPORTED_MODULE_2__.putData)(_data__WEBPACK_IMPORTED_MODULE_1__.gameData.currentQuestion),
+            (0,_gameRules__WEBPACK_IMPORTED_MODULE_2__.changeQuestion)()
+        ) : alert('option');
+    });
+    main.appendChild(checkAnswerBtn);
+
+    (0,_gameRules__WEBPACK_IMPORTED_MODULE_2__.selectAnswer)();
 }
 
 function createDiv(cls) {
@@ -594,11 +686,10 @@ function createTitle(content) {
 }
 
 function appendQuestionInfo(currentQuestion) {
-    console.log(_getData__WEBPACK_IMPORTED_MODULE_0__.questions)
-
     const questionInfoDiv = createDiv('question-div');
 
     const questionTitle = document.createElement('h2');
+    console.log(_getData__WEBPACK_IMPORTED_MODULE_0__.questions)
     questionTitle.innerHTML = _getData__WEBPACK_IMPORTED_MODULE_0__.questions[currentQuestion].question;
     questionInfoDiv.appendChild(questionTitle);
 
@@ -618,11 +709,14 @@ function appendQusetionAnswers(currentQuestion) {
 
     const shuffledAnswers = shuffle(answers);
 
+
     shuffledAnswers.forEach(answer => {
         const btn = document.createElement('button');
+
         btn.innerHTML = answer;
+
         questionAnswersDiv.appendChild(btn);
-    })
+    });
 
     return questionAnswersDiv
 }
@@ -641,19 +735,66 @@ function shuffle(array) {
     return array;
 }
 
-function appendNotification() {
+function appendNotification(currentQuestion) {
     const notificationDiv = createDiv('notification');
 
-    const icon = document.createElement('img');
-    icon.src = _data__WEBPACK_IMPORTED_MODULE_1__.notificationsIcon[0];
-    notificationDiv.appendChild(icon);
-    
     const notification = document.createElement('p');
-    notification.innerHTML = _data__WEBPACK_IMPORTED_MODULE_1__.notifications[0];
+    notification.innerHTML = _getData__WEBPACK_IMPORTED_MODULE_0__.questions[currentQuestion].difficulty;
     notificationDiv.appendChild(notification);
 
     return notificationDiv;
 }
+
+///////////////////////////////////////////////////////
+
+function createResultUI() {
+    clearUI('result');
+    main.appendChild(createResNotification());
+
+    const btnsDiv = createDiv('btns-div');
+    btnsDiv.appendChild(createButton('btn-again', 'Try again')).addEventListener('click', () => (0,_index__WEBPACK_IMPORTED_MODULE_3__.onClick)(_getData__WEBPACK_IMPORTED_MODULE_0__.getData));
+    btnsDiv.appendChild(createButton('btn-change', 'To main menu')).addEventListener('click', () => location.reload());
+    main.appendChild(btnsDiv);
+}
+
+function createResNotification() {
+    const percentage = Math.ceil((0,_gameRules__WEBPACK_IMPORTED_MODULE_2__.mathPercentage)());
+
+    const resNotifyDiv = createDiv('res-div');
+    
+    const notify = document.createElement('p');
+    
+    checkPercentage(percentage, notify);
+    resNotifyDiv.appendChild(notify);
+
+    const percentageParagraph = document.createElement('p');
+    percentageParagraph.innerHTML = `${percentage}%`;
+    resNotifyDiv.appendChild(percentageParagraph);
+
+    const resAmount = document.createElement('p');
+    resAmount.innerHTML = (0,_gameRules__WEBPACK_IMPORTED_MODULE_2__.amountCorrectFromAll)();
+    resNotifyDiv.appendChild(resAmount);
+
+    return resNotifyDiv
+}
+
+function checkPercentage(percentage, notify) {
+    if (percentage < 40) notify.innerHTML = _data__WEBPACK_IMPORTED_MODULE_1__.notifications[2][getRandomInt(_data__WEBPACK_IMPORTED_MODULE_1__.notifications.length - 1)];
+    else if (percentage > 80) notify.innerHTML = _data__WEBPACK_IMPORTED_MODULE_1__.notifications[0][getRandomInt(_data__WEBPACK_IMPORTED_MODULE_1__.notifications.length - 1)];
+    else notify.innerHTML = _data__WEBPACK_IMPORTED_MODULE_1__.notifications[1][getRandomInt(_data__WEBPACK_IMPORTED_MODULE_1__.notifications.length - 1)];
+}
+
+function createButton(cls, value) {
+    const btn = document.createElement('button');
+    btn.classList.add(cls);
+    btn.innerHTML = value;
+    return btn;
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 
 /***/ }),
 
@@ -667,23 +808,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "gameData": () => (/* binding */ gameData),
 /* harmony export */   "notifications": () => (/* binding */ notifications),
-/* harmony export */   "notificationsIcon": () => (/* binding */ notificationsIcon)
+/* harmony export */   "requestHeadings": () => (/* binding */ requestHeadings)
 /* harmony export */ });
 const gameData = {
     currentQuestion: 0,
+    questionsData: [
+
+    ]
+}
+
+const requestHeadings = {
+    questionAmount: 0,
+    category: '',
+    difficult: '',
+    type: '',
 }
 
 const notifications = [
-    'Correct Answer',
-    'Incorrect Answer',
-    'Please select an option'
+    ['Well Done', 'Amazing'],
+    ['Good', 'Not Bad'],
+    ['U can Better', 'Try another time']
 ]
 
-const notificationsIcon = [
-    './../img/check.svg',
-    './img/wrong.svg',
-    './img/question-mark.svg',
-]
+
+/***/ }),
+
+/***/ "./src/modules/gameRules.js":
+/*!**********************************!*\
+  !*** ./src/modules/gameRules.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "amountCorrectFromAll": () => (/* binding */ amountCorrectFromAll),
+/* harmony export */   "changeQuestion": () => (/* binding */ changeQuestion),
+/* harmony export */   "mathPercentage": () => (/* binding */ mathPercentage),
+/* harmony export */   "putData": () => (/* binding */ putData),
+/* harmony export */   "selectAnswer": () => (/* binding */ selectAnswer)
+/* harmony export */ });
+/* harmony import */ var _createUI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createUI */ "./src/modules/createUI.js");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data */ "./src/modules/data.js");
+/* harmony import */ var _getData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getData */ "./src/modules/getData.js");
+
+
+
+
+function putData(currentIndex) {
+    _data__WEBPACK_IMPORTED_MODULE_1__.gameData.questionsData[_data__WEBPACK_IMPORTED_MODULE_1__.gameData.currentQuestion]= [
+        _getData__WEBPACK_IMPORTED_MODULE_2__.questions[currentIndex].correct_answer,
+        document.querySelector('.selected').innerHTML,
+        _getData__WEBPACK_IMPORTED_MODULE_2__.questions[currentIndex].correct_answer === document.querySelector('.selected').innerHTML ? true : false
+    ]
+    return _data__WEBPACK_IMPORTED_MODULE_1__.gameData;
+}
+
+function selectAnswer() {
+    const btnDiv = document.querySelector('.answers-div');
+    btnDiv.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if(btnDiv.querySelector('.selected')) {
+                const activeOption = btnDiv.querySelector('.selected');
+                activeOption.classList.remove('selected');
+            }
+            btn.classList.add('selected');
+        })
+    })
+}
+
+function changeQuestion() {
+    if (_data__WEBPACK_IMPORTED_MODULE_1__.gameData.currentQuestion + 1 < _getData__WEBPACK_IMPORTED_MODULE_2__.questions.length) {
+        _data__WEBPACK_IMPORTED_MODULE_1__.gameData.currentQuestion +=1 
+        ;(0,_createUI__WEBPACK_IMPORTED_MODULE_0__.createQuestionUI)();
+    } else {
+        (0,_createUI__WEBPACK_IMPORTED_MODULE_0__.createResultUI)();
+    }
+}
+
+function mathPercentage() {
+    const results = _data__WEBPACK_IMPORTED_MODULE_1__.gameData.questionsData.map(el => el[2]);
+    const trueElems = results.filter(el => el === true).length;
+
+    const percentage = (100 * trueElems) / results.length;
+    return percentage
+}
+
+function amountCorrectFromAll() {
+    const results = _data__WEBPACK_IMPORTED_MODULE_1__.gameData.questionsData.map(el => el[2]);
+    const trueElems = results.filter(el => el === true).length;
+    return `You answered ${trueElems} / ${_getData__WEBPACK_IMPORTED_MODULE_2__.questions.length} correctly`;
+}
 
 /***/ }),
 
@@ -696,20 +910,30 @@ const notificationsIcon = [
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getData": () => (/* binding */ getData),
+/* harmony export */   "getHeadings": () => (/* binding */ getHeadings),
 /* harmony export */   "questions": () => (/* binding */ questions)
 /* harmony export */ });
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ "./src/modules/data.js");
+
 const questions = [];
 
-async function getData() {
-    const requestHeadings = {
-        numbers: document.querySelector('#number').value,
-        category: document.querySelector('#categories').value,
-        difficult: document.querySelector('#difficulty').value,
-        type: document.querySelector('#type').value,
-    }
+async function getHeadings() {
+    _data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.questionAmount = document.querySelector('#number').value;
+    _data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.category = document.querySelector('#categories').value;
+    _data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.difficult = document.querySelector('#difficulty').value;
+    _data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.type = document.querySelector('#type').value;
 
-    const data = requestHeadings.numbers <= 50 ? await fetch(`https://opentdb.com/api.php?amount=${requestHeadings.numbers}&category=${requestHeadings.category}&difficulty=${requestHeadings.difficult}&type=${requestHeadings.type}`) : alert('Amount should be lower or equal 50');
+    await getData();
+}
+
+async function getData() {
+    _data__WEBPACK_IMPORTED_MODULE_0__.gameData.currentQuestion = 0;
+    questions.length = 0;
+    console.log(_data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings)
+    const data = _data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.questionAmount <= 50 && _data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.questionAmount > 0 ?  await fetch(`https://opentdb.com/api.php?amount=${_data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.questionAmount}&category=${_data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.category}&difficulty=${_data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.difficult}&type=${_data__WEBPACK_IMPORTED_MODULE_0__.requestHeadings.type}`) : alert('Amount should be lower or equal 50 and an integer');
     const dataJSON = await data.json();
+
+    console.log(dataJSON)
 
     dataJSON.results.forEach(element => {
         questions.push(element);
@@ -718,11 +942,29 @@ async function getData() {
     return dataJSON.results;
 }
 
-// export const arr = async () => await getData();
 
 
 
 
+/***/ }),
+
+/***/ "./src/fonts/Roboto-Bold.ttf":
+/*!***********************************!*\
+  !*** ./src/fonts/Roboto-Bold.ttf ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "fonts/Roboto-Bold.ttf";
+
+/***/ }),
+
+/***/ "./src/fonts/Roboto-Regular.ttf":
+/*!**************************************!*\
+  !*** ./src/fonts/Roboto-Regular.ttf ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "fonts/Roboto-Regular.ttf";
 
 /***/ }),
 
@@ -732,7 +974,7 @@ async function getData() {
   \**********************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "assets/ae919e53191882318907.js";
+module.exports = __webpack_require__.p + "assets/496495c09a4410de8182.js";
 
 /***/ })
 
@@ -870,31 +1112,12 @@ module.exports = __webpack_require__.p + "assets/ae919e53191882318907.js";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ "./src/index.html");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
-/* harmony import */ var _modules_createUI__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/createUI */ "./src/modules/createUI.js");
-/* harmony import */ var _modules_getData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/getData */ "./src/modules/getData.js");
-
-
-
-
-
-
-document.querySelector('#submit').addEventListener('click', onClick);
-
-async function onClick () {
-    await (0,_modules_getData__WEBPACK_IMPORTED_MODULE_3__.getData)()
-    ;(0,_modules_createUI__WEBPACK_IMPORTED_MODULE_2__.createQuestionUI)()
-}
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js?b635");
+/******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.67ad65edce4289cdb5a6.js.map
+//# sourceMappingURL=main.e04b8209cf5edde2556c.js.map

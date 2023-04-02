@@ -7,10 +7,11 @@ const main = document.querySelector('main');
 
 function clearUI(cls) {
     main.replaceChildren();
+    main.classList.remove('result');
     main.classList.add(cls);
 }
 
-export async function createQuestionUI() {
+export function createQuestionUI() {
     clearUI('question');
 
     //title
@@ -35,7 +36,7 @@ export async function createQuestionUI() {
 
     //button
     const checkAnswerBtn = document.createElement('button');
-    checkAnswerBtn.classList.add('check-btn');
+    checkAnswerBtn.classList.add('check-btn', 'btn');
     checkAnswerBtn.innerHTML = 'Check Answer';
     checkAnswerBtn.addEventListener('click', () => {
         document.querySelector('.selected') ? (
@@ -75,7 +76,6 @@ function appendQuestionInfo(currentQuestion) {
     const questionInfoDiv = createDiv('question-div');
 
     const questionTitle = document.createElement('h2');
-    console.log(questions)
     questionTitle.innerHTML = questions[currentQuestion].question;
     questionInfoDiv.appendChild(questionTitle);
 
@@ -125,7 +125,7 @@ function appendNotification(currentQuestion) {
     const notificationDiv = createDiv('notification');
 
     const notification = document.createElement('p');
-    notification.innerHTML = questions[currentQuestion].difficulty;
+    notification.innerHTML = `Difficult: ${questions[currentQuestion].difficulty}`;
     notificationDiv.appendChild(notification);
 
     return notificationDiv;
@@ -153,13 +153,13 @@ function createResNotification() {
     checkPercentage(percentage, notify);
     resNotifyDiv.appendChild(notify);
 
-    const percentageParagraph = document.createElement('p');
-    percentageParagraph.innerHTML = `${percentage}%`;
-    resNotifyDiv.appendChild(percentageParagraph);
-
     const resAmount = document.createElement('p');
     resAmount.innerHTML = amountCorrectFromAll();
     resNotifyDiv.appendChild(resAmount);
+
+    const percentageParagraph = document.createElement('p');
+    percentageParagraph.innerHTML = `It's a ${percentage}% correct answers`;
+    resNotifyDiv.appendChild(percentageParagraph);
 
     return resNotifyDiv
 }
@@ -172,7 +172,7 @@ function checkPercentage(percentage, notify) {
 
 function createButton(cls, value) {
     const btn = document.createElement('button');
-    btn.classList.add(cls);
+    btn.classList.add(cls, 'btn');
     btn.innerHTML = value;
     return btn;
 }
