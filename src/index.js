@@ -2,11 +2,11 @@ import './index.html'
 import './index.scss'
 
 import { createQuestionUI } from './modules/createUI';
-import {getData} from './modules/getData';
+import { getHeadings } from './modules/getData';
 
-document.querySelector('#submit').addEventListener('click', onClick);
+document.querySelector('#submit').addEventListener('click', () => onClick(getHeadings));
 
-async function onClick () {
-    await getData()
+export async function onClick (asyncFunc) {
+    await asyncFunc()
     createQuestionUI()
 }

@@ -33,11 +33,16 @@ export function changeQuestion() {
     }
 }
 
-
 export function mathPercentage() {
     const results = gameData.questionsData.map(el => el[2]);
     const trueElems = results.filter(el => el === true).length;
 
     const percentage = (100 * trueElems) / results.length;
     return percentage
+}
+
+export function amountCorrectFromAll() {
+    const results = gameData.questionsData.map(el => el[2]);
+    const trueElems = results.filter(el => el === true).length;
+    return `You answered ${trueElems} / ${questions.length} correctly`;
 }
