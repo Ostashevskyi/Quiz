@@ -141,9 +141,7 @@ export function createResultUI() {
     btnsDiv.appendChild(createButton('btn-again', 'Try again')).addEventListener('click', () => onClick(getData));
     btnsDiv.appendChild(createButton('btn-change', 'To main menu')).addEventListener('click', () => location.reload());
     main.appendChild(btnsDiv);
-    
 }
-
 
 function createResNotification() {
     const percentage = Math.ceil(mathPercentage());
