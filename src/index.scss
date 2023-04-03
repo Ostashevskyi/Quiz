@@ -1,10 +1,13 @@
 @import './styles/var';
 @import './styles/fonts';
 
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
     background-color: $bg;
 
 }
@@ -19,28 +22,216 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
-    // border: 1px solid black;
-    border-radius: 10px 0px 10px 0px;
+    border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    h2 {
+        margin: 15px 0px;
+    }
     .inputs {
+        font-family: 'Roboto Regular';
         width: 80%;
         margin: 20px auto 0px auto;
+        height: 40px;
+        border-radius: 5px;
+        border-color: $purple;
+        color: $purple;
         &:last-child {
             margin-bottom: 20px;
+            background: $light_grey;
+        }
+        
+        &:focus, &:active, &:focus-visible {
+            border-color: $purple;
         }
     }
+    #number {
+        width: 78%;
+        padding: 0px 10px;
+    }
+    select {
+        padding: 10px;
+    }
     select > option {
-        font-size: 20px;
+        font-size: 15px;
+        color: black;
+        font-family: 'Roboto Regular';
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+        width: fit-content;
     }
 }
 
 main.question {
     background: white;
-    max-width: 700px;
-    .answers-div {
-        .selected {
-            background: green;
+    width: 600px;
+    padding: 0px 15px;
+    .title-div {
+        font-family: 'Roboto Regular';
+        font-size: 15px;
+    }
+    .count-div {
+        p {
+            border: 5px solid $light_grey;
+            font-weight: 700;
+            color: $purple;
+            font-size: 15px;
+            width: 80px;
+            margin: 0 auto;
+            padding: 10px;
+            font-family: 'Roboto Bold';
         }
+    }
+    .question-div {
+        h2 {
+            font-family: 'Roboto Regular';
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            width: fit-content;
+            padding: 5px;
+            background: $purple;
+            border-radius: 5px;
+            margin: 0 auto;
+            color: $white;
+            font-family: 'Roboto Regular';
+            
+        }
+    }
+    .notification {
+        p {
+            font-family: 'Roboto Bold';
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+    }
+    .answers-div {
+        display: flex;
+        flex-direction: column;
+        button {
+            font-family: 'Roboto Regular';
+            border-radius: 10px;
+            height: fit-content;
+            padding: 10px;
+            font-size: 15px;
+            background-color: $purple;
+            color: $white;
+            border: none;
+            margin-bottom: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 0 0 #6c4298;
+            transition: $transition;
+            &:hover {
+                background: $light_grey;
+                color: $black;
+                border-color: $light_grey;
+                box-shadow: 0 4px 0 0 $grey;
+            }
+            &:active {
+                transform: scale(0.97);
+            }
+        }
+        .selected {
+            background: $light_grey;
+            color: $black;
+            border-color: $light_grey;
+            box-shadow: 0 4px 0 0 $grey;
+
+
+        }
+    }
+    .btn {
+        width: 200px;
+        margin: 20px auto;
+        border-radius: 10px;
+        height: 40px;
+        background-color: $light_grey;
+        outline: none;
+        border: 1px solid $light_grey;
+        font-family: 'Roboto Bold';
+        text-transform: uppercase;
+        font-size: 15px;
+        cursor: pointer;
+        box-shadow: 0 4px 0 0 $grey;
+        &:hover {
+            background: $dark_grey;
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+        width: fit-content;
     }
 }
 
+
+main.result {
+    p {
+        font-family: 'Roboto Bold';
+        font-size: 20px;
+        margin: 30px 0px;
+    }
+    .btn-again {
+        margin-right: 20px;
+    }
+    .accordion-div {
+        .accordion-btn {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Roboto Bold';
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+          }
+          
+          .active, .accordion-btn:hover {
+            background-color: #ccc;
+          }
+          
+          .accordion-btn:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+          }
+          
+          .active:after {
+            content: "\2212";
+          }
+          
+          .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow-y: scroll;
+            transition: max-height 0.2s ease-out;
+            margin-bottom: 20px;
+            p {
+                font-family: "Roboto Bold";
+                font-size: 20px;
+                margin: 30px 0px;
+                text-align: left;
+                &.true {
+                    color: green;
+                } 
+                &.false {
+                    color: red;
+                }
+            }
+          }
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+        width: fit-content;
+        .btn-again {
+            margin: 0px;
+        }
+    }
+}

@@ -1,15 +1,17 @@
-import { questions } from "./getData";
+import { getData, questions } from "./getData";
 import { gameData, notifications, notificationsIcon } from "./data";
-import { changeQuestion, mathPercentage, putData, selectAnswer } from "./gameRules";
+import { accordion, amountCorrectFromAll, animatedAccordion, changeQuestion, mathPercentage, putData, selectAnswer } from "./gameRules";
+import { onClick } from "../index";
 
 const main = document.querySelector('main');
 
 function clearUI(cls) {
     main.replaceChildren();
+    main.classList.remove('result');
     main.classList.add(cls);
 }
 
-export async function createQuestionUI() {
+export function createQuestionUI() {
     clearUI('question');
 
     //title
@@ -24,17 +26,17 @@ export async function createQuestionUI() {
     const questionInfo = appendQuestionInfo(gameData.currentQuestion);
     main.appendChild(questionInfo);
 
+    //notification 
+    const notification = appendNotification(gameData.currentQuestion);
+    main.appendChild(notification);
+
     //question answers
     const questionAnswers = appendQusetionAnswers(gameData.currentQuestion);
     main.appendChild(questionAnswers);
 
-    //notification 
-    const notification = appendNotification();
-    main.appendChild(notification);
-
     //button
     const checkAnswerBtn = document.createElement('button');
-    checkAnswerBtn.classList.add('check-btn');
+    checkAnswerBtn.classList.add('check-btn', 'btn');
     checkAnswerBtn.innerHTML = 'Check Answer';
     checkAnswerBtn.addEventListener('click', () => {
         document.querySelector('.selected') ? (
@@ -119,11 +121,11 @@ function shuffle(array) {
     return array;
 }
 
-function appendNotification() {
+function appendNotification(currentQuestion) {
     const notificationDiv = createDiv('notification');
 
     const notification = document.createElement('p');
-    notification.innerHTML = notifications[0];
+    notification.innerHTML = `Difficult: ${questions[currentQuestion].difficulty}`;
     notificationDiv.appendChild(notification);
 
     return notificationDiv;
@@ -134,11 +136,75 @@ function appendNotification() {
 export function createResultUI() {
     clearUI('result');
     main.appendChild(createResNotification());
+    main.appendChild(createAccordion());
+
+
+    const btnsDiv = createDiv('btns-div');
+    btnsDiv.appendChild(createButton('btn-again', 'Try again')).addEventListener('click', () => onClick(getData));
+    btnsDiv.appendChild(createButton('btn-change', 'To main menu')).addEventListener('click', () => location.reload());
+    main.appendChild(btnsDiv);
+
 }
 
-
 function createResNotification() {
-    const percentage = document.createElement('p');
-    percentage.innerHTML = `${mathPercentage()}%`;
-    return percentage
+    const percentage = Math.ceil(mathPercentage());
+
+    const resNotifyDiv = createDiv('res-div');
+    
+    const notify = document.createElement('p');
+    
+    checkPercentage(percentage, notify);
+    resNotifyDiv.appendChild(notify);
+
+    const resAmount = document.createElement('p');
+    resAmount.innerHTML = amountCorrectFromAll();
+    resNotifyDiv.appendChild(resAmount);
+
+    const percentageParagraph = document.createElement('p');
+    percentageParagraph.innerHTML = `It's a ${percentage}% correct answers`;
+    resNotifyDiv.appendChild(percentageParagraph);
+
+    return resNotifyDiv
+}
+
+function checkPercentage(percentage, notify) {
+    if (percentage < 40) notify.innerHTML = notifications[2][getRandomInt(notifications.length - 1)];
+    else if (percentage > 80) notify.innerHTML = notifications[0][getRandomInt(notifications.length - 1)];
+    else notify.innerHTML = notifications[1][getRandomInt(notifications.length - 1)];
+}
+
+function createButton(cls, value) {
+    const btn = document.createElement('button');
+    btn.classList.add(cls, 'btn');
+    btn.innerHTML = value;
+    return btn;
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function createAccordion() {
+    const accordionDiv = createDiv('accordion-div');
+    
+    const accordionBtn = document.createElement('button');
+    accordionBtn.classList.add('accordion-btn');
+    accordionBtn.innerHTML = 'See more';
+
+    accordionDiv.appendChild(accordionBtn);
+
+    const panelDiv = createDiv('panel');
+
+    accordion(panelDiv);
+
+    accordionBtn.addEventListener('click', () => {
+        accordionBtn.classList.toggle('active');
+        animatedAccordion(panelDiv);
+
+    });
+
+    accordionDiv.appendChild(panelDiv);
+
+
+    return accordionDiv
 }

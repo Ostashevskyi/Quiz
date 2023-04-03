@@ -5,14 +5,15 @@ export const gameData = {
     ]
 }
 
+export const requestHeadings = {
+    questionAmount: 0,
+    category: '',
+    difficult: '',
+    type: '',
+}
+
 export const notifications = [
     ['Well Done', 'Amazing'],
     ['Good', 'Not Bad'],
     ['U can Better', 'Try another time']
-]
-
-export const notificationsIcon = [
-    './../img/check.svg',
-    './img/wrong.svg',
-    './img/question-mark.svg',
 ]

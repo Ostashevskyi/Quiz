@@ -1,1 +1,0 @@
-import"./index.html";import"./index.scss";import{createQuestionUI}from"./modules/createUI";import{getData}from"./modules/getData";async function onClick(){await getData(),createQuestionUI()}document.querySelector("#submit").addEventListener("click",onClick);
