@@ -46,3 +46,23 @@ export function amountCorrectFromAll() {
     const trueElems = results.filter(el => el === true).length;
     return `You answered ${trueElems} / ${questions.length} correctly`;
 }
+
+export function animatedAccordion(panelDiv) {
+    if (panelDiv.style.maxHeight) {
+        panelDiv.style.maxHeight = null;
+    } else {
+        panelDiv.style.maxHeight = "200px";
+    }
+}
+
+export function accordion(panelDiv) {
+    console.log(gameData)
+    for (let i = 0; i < gameData.questionsData.length; i++) {
+        const p = document.createElement('p');
+        p.innerHTML = `Question №${i + 1}
+        Your answer: "${gameData.questionsData[i][1]}", 
+        Correct answer: "${gameData.questionsData[i][0]}"`
+        p.classList.add(gameData.questionsData[i][2] ? "true" : "false");
+        panelDiv.appendChild(p);
+    }
+}

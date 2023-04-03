@@ -1,6 +1,6 @@
 import { getData, questions } from "./getData";
 import { gameData, notifications, notificationsIcon } from "./data";
-import { amountCorrectFromAll, changeQuestion, mathPercentage, putData, selectAnswer } from "./gameRules";
+import { accordion, amountCorrectFromAll, animatedAccordion, changeQuestion, mathPercentage, putData, selectAnswer } from "./gameRules";
 import { onClick } from "../index";
 
 const main = document.querySelector('main');
@@ -136,11 +136,14 @@ function appendNotification(currentQuestion) {
 export function createResultUI() {
     clearUI('result');
     main.appendChild(createResNotification());
+    main.appendChild(createAccordion());
+
 
     const btnsDiv = createDiv('btns-div');
     btnsDiv.appendChild(createButton('btn-again', 'Try again')).addEventListener('click', () => onClick(getData));
     btnsDiv.appendChild(createButton('btn-change', 'To main menu')).addEventListener('click', () => location.reload());
     main.appendChild(btnsDiv);
+
 }
 
 function createResNotification() {
@@ -179,4 +182,29 @@ function createButton(cls, value) {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
+}
+
+function createAccordion() {
+    const accordionDiv = createDiv('accordion-div');
+    
+    const accordionBtn = document.createElement('button');
+    accordionBtn.classList.add('accordion-btn');
+    accordionBtn.innerHTML = 'See more';
+
+    accordionDiv.appendChild(accordionBtn);
+
+    const panelDiv = createDiv('panel');
+
+    accordion(panelDiv);
+
+    accordionBtn.addEventListener('click', () => {
+        accordionBtn.classList.toggle('active');
+        animatedAccordion(panelDiv);
+
+    });
+
+    accordionDiv.appendChild(panelDiv);
+
+
+    return accordionDiv
+}
