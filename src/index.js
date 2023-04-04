@@ -1,6 +1,7 @@
 import './index.html'
 import './index.scss'
 
+
 import { createQuestionUI } from './modules/createUI';
 import { getHeadings } from './modules/getData';
 

@@ -42,7 +42,12 @@ export function createQuestionUI() {
         document.querySelector('.selected') ? (
             putData(gameData.currentQuestion),
             changeQuestion()
-        ) : alert('option');
+        ) : document.body.querySelector('.popup-div') 
+            ? (
+                document.body.removeChild(document.querySelector('.popup-div')),
+                createPopup('Please choose an option')
+            ) 
+            : createPopup('Please choose an option');
     });
     main.appendChild(checkAnswerBtn);
 
@@ -208,3 +213,24 @@ function createAccordion() {
 
     return accordionDiv
 }
+
+export function createPopup(content) {
+    const popupDiv = createDiv('popup-div');
+    popupDiv.classList.add('show');
+
+    const popupText = document.createElement('span');
+    popupText.innerHTML = content
+    popupDiv.appendChild(popupText);
+
+    const popupBtn = document.createElement('span');
+    popupBtn.innerHTML = '×';
+    popupBtn.addEventListener('click', () => {
+        popupDiv.classList.add('hide');
+        popupDiv.classList.remove('show');
+    })
+    popupDiv.appendChild(popupBtn);
+
+
+    document.body.appendChild(popupDiv);
+}
+

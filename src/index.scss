@@ -9,6 +9,7 @@
 
 body {
     background-color: $bg;
+    overflow: hidden;
 
 }
 
@@ -25,12 +26,12 @@ main {
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     h2 {
-        margin: 15px 0px;
+        margin: 15px 0px 20px 0px;
     }
     .inputs {
         font-family: 'Roboto Regular';
         width: 80%;
-        margin: 20px auto 0px auto;
+        margin: 0px auto 20px auto;
         height: 40px;
         border-radius: 5px;
         border-color: $purple;
@@ -232,6 +233,51 @@ main.result {
         width: fit-content;
         .btn-again {
             margin: 0px;
+        }
+    }
+}
+
+
+.popup-div {
+    background: $popup_bg;
+    padding: 20px 50px 20px 25px;
+    min-width: fit-content;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-left: 10px solid $popup_left;
+    text-align: center;
+    &.show {
+        animation: show_slide 1s ease forwards;
+    }
+    
+    &.hide {
+        animation: hide_slide 1s ease forwards;
+        display: none;
+    }
+    span {
+        &:first-child {
+            padding: 0px 20px 0px 0px;
+            font-size: 18px;
+            color: $popup_text;
+            font-family: 'Roboto Bold';
+        }
+        &:last-child{
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 35px;
+            line-height: 40px;
+            background: $popup_btn;
+            padding: 20px 18px;
+            font-weight: 900;
+            cursor: pointer;
+            &:hover {
+                background: $popup_hover;
+            }
         }
     }
 }

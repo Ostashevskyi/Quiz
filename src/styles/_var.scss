@@ -6,4 +6,26 @@ $white: #ffff;
 $grey: #bbb;
 $black: #000;
 
+$popup_bg: #ffdb9b;
+$popup_left: #ffa502;
+$popup_text: #c38500;
+$popup_btn: #ffd080;
+$popup_hover: #ffc766;
+
+
 $transition: all 300ms ease-in-out;
+
+@keyframes show_slide {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-10%);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}

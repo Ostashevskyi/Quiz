@@ -1,7 +1,6 @@
 export const gameData = {
     currentQuestion: 0,
     questionsData: [
-
     ]
 }
 
