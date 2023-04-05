@@ -1,5 +1,5 @@
-import { getData, questions } from "./getData";
-import { gameData, notifications, notificationsIcon } from "./data";
+import { getData } from "./getData";
+import { gameData, notifications } from "./data";
 import { accordion, amountCorrectFromAll, animatedAccordion, changeQuestion, mathPercentage, putData, selectAnswer } from "./gameRules";
 import { onClick } from "../index";
 
@@ -39,16 +39,19 @@ export function createQuestionUI() {
     checkAnswerBtn.classList.add('check-btn', 'btn');
     checkAnswerBtn.innerHTML = 'Check Answer';
     checkAnswerBtn.addEventListener('click', () => {
-        document.querySelector('.selected') ? (
-            putData(gameData.currentQuestion),
+        if (document.querySelector('.selected')) {
+            putData(gameData.currentQuestion);
             changeQuestion()
-        ) : document.body.querySelector('.popup-div') 
-            ? (
-                document.body.removeChild(document.querySelector('.popup-div')),
-                createPopup('Please choose an option')
-            ) 
-            : createPopup('Please choose an option');
-    });
+        } else {
+            if (document.body.querySelector('.popup-div')) {
+                document.body.removeChild(document.querySelector('.popup-div'));
+                createPopup('Please choose an option');
+            } else {
+                createPopup('Please choose an option');
+            }
+        }
+
+        });
     main.appendChild(checkAnswerBtn);
 
     selectAnswer();
@@ -61,9 +64,10 @@ function createDiv(cls) {
 }
 
 function createCount(currentQuestion) {
+    const questionsLength = Object.keys(gameData.questions).length;
     const countDiv = createDiv('count-div');
     const count = document.createElement('p');
-    count.innerHTML = `${currentQuestion + 1} / ${questions.length}`;
+    count.innerHTML = `${currentQuestion + 1} / ${questionsLength}`;
     countDiv.appendChild(count);
     return countDiv;
 }
@@ -81,11 +85,11 @@ function appendQuestionInfo(currentQuestion) {
     const questionInfoDiv = createDiv('question-div');
 
     const questionTitle = document.createElement('h2');
-    questionTitle.innerHTML = questions[currentQuestion].question;
+    questionTitle.innerHTML = gameData.questions[currentQuestion].question;
     questionInfoDiv.appendChild(questionTitle);
 
     const categoryTitle = document.createElement('p');
-    categoryTitle.innerHTML = questions[currentQuestion].category;
+    categoryTitle.innerHTML = gameData.questions[currentQuestion].category;
     questionInfoDiv.appendChild(categoryTitle);
 
     return questionInfoDiv;
@@ -94,12 +98,11 @@ function appendQuestionInfo(currentQuestion) {
 function appendQusetionAnswers(currentQuestion) {
     const questionAnswersDiv = createDiv('answers-div');
 
-    const incorrectAnswers = questions[currentQuestion].incorrect_answers;
-    const correctAnswer = questions[currentQuestion].correct_answer;
+    const incorrectAnswers = gameData.questions[currentQuestion].incorrect_answers;
+    const correctAnswer = gameData.questions[currentQuestion].correct_answer;
     const answers = incorrectAnswers.concat(correctAnswer);
 
     const shuffledAnswers = shuffle(answers);
-
 
     shuffledAnswers.forEach(answer => {
         const btn = document.createElement('button');
@@ -113,7 +116,7 @@ function appendQusetionAnswers(currentQuestion) {
 }
 
 function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
+    let currentIndex = array.length, randomIndex;
   
     while (currentIndex != 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
@@ -130,7 +133,7 @@ function appendNotification(currentQuestion) {
     const notificationDiv = createDiv('notification');
 
     const notification = document.createElement('p');
-    notification.innerHTML = `Difficult: ${questions[currentQuestion].difficulty}`;
+    notification.innerHTML = `Difficult: ${gameData.questions[currentQuestion].difficulty}`;
     notificationDiv.appendChild(notification);
 
     return notificationDiv;
@@ -173,9 +176,10 @@ function createResNotification() {
 }
 
 function checkPercentage(percentage, notify) {
-    if (percentage < 40) notify.innerHTML = notifications[2][getRandomInt(notifications.length - 1)];
-    else if (percentage > 80) notify.innerHTML = notifications[0][getRandomInt(notifications.length - 1)];
-    else notify.innerHTML = notifications[1][getRandomInt(notifications.length - 1)];
+    const notificationLength = Object.keys(notifications).length;
+    if (percentage < 40) notify.innerHTML = notifications.bad[getRandomInt(notificationLength - 1)];
+    else if (percentage > 80) notify.innerHTML = notifications.great[getRandomInt(notificationLength - 1)];
+    else notify.innerHTML = notifications.good[getRandomInt(notificationLength - 1)];
 }
 
 function createButton(cls, value) {
@@ -225,8 +229,7 @@ export function createPopup(content) {
     const popupBtn = document.createElement('span');
     popupBtn.innerHTML = '×';
     popupBtn.addEventListener('click', () => {
-        popupDiv.classList.add('hide');
-        popupDiv.classList.remove('show');
+        popupDiv.classList.toggle('show');
     })
     popupDiv.appendChild(popupBtn);
 

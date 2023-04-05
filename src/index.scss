@@ -45,8 +45,8 @@ main {
             border-color: $purple;
         }
     }
-    #number {
-        width: 78%;
+    #questionAmount {
+        width: 80%;
         padding: 0px 10px;
     }
     select {
@@ -249,13 +249,10 @@ main.result {
     overflow: hidden;
     border-left: 10px solid $popup_left;
     text-align: center;
+    display: none;
     &.show {
+        display: block;
         animation: show_slide 1s ease forwards;
-    }
-    
-    &.hide {
-        animation: hide_slide 1s ease forwards;
-        display: none;
     }
     span {
         &:first-child {

@@ -1,7 +1,7 @@
 export const gameData = {
     currentQuestion: 0,
-    questionsData: [
-    ]
+    questionsData: [],
+    questions: []
 }
 
 export const requestHeadings = {
@@ -11,8 +11,11 @@ export const requestHeadings = {
     type: '',
 }
 
-export const notifications = [
-    ['Well Done', 'Amazing'],
-    ['Good', 'Not Bad'],
-    ['U can Better', 'Try another time']
-]
+export const notifications = {
+   great: ['Well Done', 'Amazing'],
+   good: ['Good', 'Not Bad'],
+   bad: ['U can Better', 'Try again']
+}
+
+export const MAX_QUESTIONS = 50;
+export const MIN_QUESTIONS = 0;
