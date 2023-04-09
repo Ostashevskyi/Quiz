@@ -15,12 +15,7 @@ export async function getData() {
             createPopup(e);
         }
     } else {
-        if (document.body.querySelector('.popup-div')) {
-            document.body.removeChild(document.querySelector('.popup-div'));
             createPopup('Incorrect value');
-        } else {
-            createPopup('Incorrect value');
-        }
     }
 }
 
