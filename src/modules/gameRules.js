@@ -3,12 +3,13 @@ import { gameData, requestHeadings } from "./data";
 
 
 export function putData() {
+    const selected = document.querySelector('.selected')
     const {questions} = gameData;
     const question = questions[gameData.currentQuestion];
     gameData.questionsData[gameData.currentQuestion]= {
         correctAnswer: question.correct_answer,
-        userAnswer: document.querySelector('.selected').innerHTML,
-        result: question.correct_answer === document.querySelector('.selected').innerHTML ? true : false
+        userAnswer: selected.innerHTML,
+        result: question.correct_answer === selected.innerHTML 
     }
 
     return gameData;
@@ -78,12 +79,31 @@ export function animatedAccordion(panelDiv) {
 }
 
 export function accordion(panelDiv) {
-    for (let i = 0; i < gameData.questionsData.length; i++) {
+    const dataQuestion = gameData.questionsData
+    for (let i = 0; i < dataQuestion.length; i++) {
         const p = document.createElement('p');
         p.innerHTML = `Question №${i + 1}
-        Your answer: "${gameData.questionsData[i].userAnswer}", 
-        Correct answer: "${gameData.questionsData[i].correctAnswer}"`
-        p.classList.add(gameData.questionsData[i].result ? "true" : "false");
+            Your answer: "${dataQuestion[i].userAnswer}", 
+            Correct answer: "${dataQuestion[i].correctAnswer}"`
+        p.classList.add(`${dataQuestion[i].result}`);
         panelDiv.appendChild(p);
     }
+}
+
+export function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+  
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+}
+
+export function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }

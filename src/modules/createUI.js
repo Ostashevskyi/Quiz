@@ -1,6 +1,6 @@
 import { getData } from "./getData";
 import { gameData, notifications } from "./data";
-import { accordion, amountCorrectFromAll, animatedAccordion, changeQuestion, mathPercentage, putData, selectAnswer } from "./gameRules";
+import { accordion, amountCorrectFromAll, animatedAccordion, changeQuestion, mathPercentage, putData, selectAnswer, getRandomInt, shuffle } from "./gameRules";
 import { onClick } from "../index";
 
 const main = document.querySelector('main');
@@ -42,13 +42,8 @@ export function createQuestionUI() {
         if (document.querySelector('.selected')) {
             putData(gameData.currentQuestion);
             changeQuestion()
-        } else {
-            if (document.body.querySelector('.popup-div')) {
-                document.body.removeChild(document.querySelector('.popup-div'));
-                createPopup('Please choose an option');
-            } else {
-                createPopup('Please choose an option');
-            }
+        } else {            
+            createPopup('Please choose an option');
         }
 
         });
@@ -83,13 +78,14 @@ function createTitle(content) {
 
 function appendQuestionInfo(currentQuestion) {
     const questionInfoDiv = createDiv('question-div');
+    const gameCurrentQuestion = gameData.questions[currentQuestion];
 
     const questionTitle = document.createElement('h2');
-    questionTitle.innerHTML = gameData.questions[currentQuestion].question;
+    questionTitle.innerHTML = gameCurrentQuestion.question;
     questionInfoDiv.appendChild(questionTitle);
 
     const categoryTitle = document.createElement('p');
-    categoryTitle.innerHTML = gameData.questions[currentQuestion].category;
+    categoryTitle.innerHTML = gameCurrentQuestion.category;
     questionInfoDiv.appendChild(categoryTitle);
 
     return questionInfoDiv;
@@ -97,9 +93,10 @@ function appendQuestionInfo(currentQuestion) {
 
 function appendQusetionAnswers(currentQuestion) {
     const questionAnswersDiv = createDiv('answers-div');
+    const gameCurrentQuestion = gameData.questions[currentQuestion];
 
-    const incorrectAnswers = gameData.questions[currentQuestion].incorrect_answers;
-    const correctAnswer = gameData.questions[currentQuestion].correct_answer;
+    const incorrectAnswers = gameCurrentQuestion.incorrect_answers;
+    const correctAnswer = gameCurrentQuestion.correct_answer;
     const answers = incorrectAnswers.concat(correctAnswer);
 
     const shuffledAnswers = shuffle(answers);
@@ -113,20 +110,6 @@ function appendQusetionAnswers(currentQuestion) {
     });
 
     return questionAnswersDiv
-}
-
-function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
-  
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
 }
 
 function appendNotification(currentQuestion) {
@@ -189,9 +172,6 @@ function createButton(cls, value) {
     return btn;
 }
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
 
 function createAccordion() {
     const accordionDiv = createDiv('accordion-div');
@@ -219,6 +199,9 @@ function createAccordion() {
 }
 
 export function createPopup(content) {
+    if (document.body.querySelector('.popup-div')) {
+        document.body.removeChild(document.querySelector('.popup-div'));
+    }
     const popupDiv = createDiv('popup-div');
     popupDiv.classList.add('show');
 
