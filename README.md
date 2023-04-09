@@ -1,4 +1,4 @@
-# Pages - Author's book store
+# Quiz
 
 This is a simple quiz project where you can check your general knowleadge.
 
